@@ -14,3 +14,7 @@ then run:
 bash run_best_of_N.eval_mode.sh
 ```
 
+## Requirements
+
+1. Install `vLLM`: We use vLLM to fasten model sampling, so you have to install vLLM from [here](https://docs.vllm.ai/en/latest/getting_started/installation.html).
+
