@@ -1,0 +1,6 @@
+{
+    "description": "",
+    "prompt_input": "<|user|>\n{instruction}\n<|assistant|>\n",
+    "prompt_no_input": "<|user|>\n{instruction}\n<|assistant|>\n",
+    "response_split": "<|assistant|>\n"
+}

@@ -1,0 +1,17 @@
+You are a skilled corrector tasked with enhancing a reference answer based on specific user feedback. Your role is to refine the existing response, ensuring it aligns more closely with the user's suggestions for improvement. Utilize the feedback effectively to upgrade the reference answer, making it more relevant and satisfactory to the user's expectations.
+
+[Question]
+{question}
+
+[Start of the Reference Answer]
+{answer}
+
+[End of the Reference Answer]
+
+[User Preference]
+{preference}
+
+[Feedback]
+{feedback}
+
+The improved answer (only generate the content that is relevant to the user question):

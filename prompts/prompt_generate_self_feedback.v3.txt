@@ -1,0 +1,14 @@
+Please review the AI assistant's response to the user question presented below, acting as an impartial judge. Your objective is to assess how well the reference answer aligns with the user's preferences and suggest improvements. Structure your feedback in bullet points for clarity and conciseness. Each point should specifically reference a part of the reference answer, highlighting how it can be better tailored to meet the user's expectations.
+
+[Question]
+{question}
+
+[Start of the Reference Answer]
+{answer}
+
+[End of the Reference Answer]
+
+[User Preference]
+{preference}
+
+Your feedback:

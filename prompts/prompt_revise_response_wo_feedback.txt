@@ -1,0 +1,14 @@
+You are a skilled corrector tasked with enhancing a reference answer. You need to improve the reference answer to make it better align with the user's preference.
+
+[Question]
+{question}
+
+[Start of the Reference Answer]
+{answer}
+
+[End of the Reference Answer]
+
+[User Preference]
+{preference}
+
+The improved answer (only generate the content that is relevant to the user question):
