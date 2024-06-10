@@ -1,17 +1,24 @@
-## Preference Guided Reflective Sampling for Aligning Language Models
-
+## PReS
 Code for our paper [Preference Guided Reflective Sampling for Aligning Language Models](). We provide the code for generating data with *PReS*, where the generated data can be used in offline RL training for aligning a language model. For comparison, we also include the baseline sampling methods such as random sampling.
 
+
+
+## Quick Links
+  - [Overview](#overview)
+  - [Compare with Random Sampling (Rand)](#compare-with-random-sampling-rand)
+  - [Method](#method)
+  - [Quick Start](#quick-start)
+  - [Requirements](#requirements)
 
 ## Overview
 We propose a new sampling method named *Preference Guided Reflective Sampling for Aligning Language Models (PReS)*. *PReS* frames the data generation as the optimization process to a specified user preference described in natural language, such that "Can you give me a concise response without explanations?". 
 
-### Compare with Random Sampling (Rand)
+## Compare with Random Sampling (Rand)
 **Preference**: *PReS* needs to specify a user preference for optimization but Rand does not. 
 <img src="./figures/compare_random.png" height="200" alt="Description of Image">
 
 
-### Method
+## Method
 *PReS* employs a tree-based generation approach to optimize outputs aligned to user preference. 
 ![](./figures/method.png)
 
