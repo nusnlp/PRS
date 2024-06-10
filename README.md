@@ -5,11 +5,11 @@ Code for our paper [Preference Guided Reflective Sampling for Aligning Language 
 ## Quick Start
 To sample responses, in file of `run_best_of_N.eval_mode.sh`, you have to specify the 
 
-1. dataset path;
-2. the policy model;
-3. the reward model,
+1. data path of prompts;
+2. the policy model, such as Mistral-7B-Instruct-v0.2;
+3. the reward model, such as [UltraRM-13b](https://huggingface.co/openbmb/UltraRM-13b). 
 
-then run:
+Then run:
 ```bash
 bash run_best_of_N.eval_mode.sh
 ```
