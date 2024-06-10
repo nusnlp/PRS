@@ -3,11 +3,11 @@ GPU=2
 batch_size=10000
 cal_reward=true
 
-path_to_gen_self_feedback=../../prompts/prompt_generate_self_feedback.v3.txt
-path_to_revise_w_feedback=../../prompts/prompt_revise_response_w_feedback.v3.txt
-path_to_revise_wo_feedback=../../prompts/prompt_revise_response_wo_feedback.txt
+path_to_gen_self_feedback=./prompts/prompt_generate_self_feedback.v3.txt
+path_to_revise_w_feedback=./prompts/prompt_revise_response_w_feedback.v3.txt
+path_to_revise_wo_feedback=./prompts/prompt_revise_response_wo_feedback.txt
 
-data_source=alpaca-GPT4-dev-100 
+data_source=alpaca-GPT4-dev-100
 
 prefer_type=common #preference_1  preference_2
 
