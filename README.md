@@ -17,7 +17,7 @@ bash run_best_of_N.eval_mode.sh
 For PReS, you will get two files of responses. You can combine them with `combine_for_tree_search.py`:
 
 ```bash
-python combine_for_tree_search.py path_to_initial_response  path_to_refinement  path_to_save
+python combine_for_tree_search.py path_to_initial_response path_to_refinement path_to_save
 ```
 
 ## Requirements
