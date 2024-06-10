@@ -12,7 +12,10 @@ We propose a new sampling method named *Preference Guided Reflective Sampling fo
 
 ### Method
 *PReS* employs a tree-based generation approach to optimize outputs aligned to user preference. 
+<img src="./figures/method.png" height="300" alt="Description of Image">
 ![](./figures/method.png)
+
+
 
 
 
