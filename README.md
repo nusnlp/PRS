@@ -8,11 +8,11 @@ We propose a new sampling method named *Preference Guided Reflective Sampling fo
 
 ### Compare with Random Sampling (Rand)
 **Preference**: *PReS* needs to specify a user preference for optimization but Rand does not. 
-![](./figures/compare_random.png)
+<img src="./figures/compare_random.png" height="200" alt="Description of Image">
+
 
 ### Method
 *PReS* employs a tree-based generation approach to optimize outputs aligned to user preference. 
-<img src="./figures/method.png" height="300" alt="Description of Image">
 ![](./figures/method.png)
 
 
