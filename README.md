@@ -1,5 +1,5 @@
 ## PReS
-Code for our paper [Preference Guided Reflective Sampling for Aligning Language Models](). We provide the code for generating data with *PReS*, where the generated data can be used in offline RL training for aligning a language model. For comparison, we also include the baseline sampling methods such as random sampling.
+Code for our paper [Preference Guided Reflective Sampling for Aligning Language Models](). We provide the code for generating data with *PRS*, where the generated data can be used in offline RL training for aligning a language model. For comparison, we also include the baseline sampling methods such as random sampling.
 
 
 
@@ -10,14 +10,14 @@ Code for our paper [Preference Guided Reflective Sampling for Aligning Language 
   - [Requirements](#requirements)
 
 ## Overview
-We propose a new sampling method named *Preference Guided Reflective Sampling for Aligning Language Models (PReS)*. *PReS* frames the data generation as the optimization process to a specified user preference described in natural language, such that "Can you give me a concise response without explanations?". 
+We propose a new sampling method named *Preference Guided Reflective Sampling for Aligning Language Models (PRS)*. *PRS* frames the data generation as the optimization process to a specified user preference described in natural language, such that "Can you give me a concise response without explanations?". 
 
 <img src="./figures/compare_random.png" height="200" alt="Description of Image">
 
 
 
 ## Method
-*PReS* employs a tree-based generation approach to optimize outputs aligned to user preference. 
+*PRS* employs a tree-based generation approach to optimize outputs aligned to user preference. 
 
 ![](./figures/method.png)
 
@@ -40,7 +40,7 @@ Then run:
 bash run_best_of_N.eval_mode.sh
 ```
 
-For *PReS*, you will get two files of responses. You can combine them with `combine_for_tree_search.py`:
+For *PRS*, you will get two files of responses. You can combine them with `combine_for_tree_search.py`:
 
 ```bash
 python combine_for_tree_search.py path_to_initial_response path_to_refinement path_to_save
