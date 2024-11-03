@@ -10,7 +10,7 @@ Code for our EMNLP2024 paper [Preference Guided Reflective Sampling for Aligning
   - [Requirements](#requirements)
 
 ## Background
-<img src="./figures/framework.png" height="150" alt="Description of Image">
+<img src="./figures/framework.png" height="180" alt="Description of Image">
 
 Iterative data generation and model re-training can effectively align large language models (LLMs) to human preferences. The process of data sampling is crucial, as it significantly influences the success of policy improvement.
 
@@ -30,7 +30,7 @@ Although random sampling is simple and effective, it has two main drawbacks:
 
 
 ## Method: Preference-Guided Reflective Sampling (PRS)
-<img src="./figures/rand_vs_prs.png" height="200" alt="Description of Image">
+<img src="./figures/rand_vs_prs.png" height="300" alt="Description of Image">
 
 We propose a new sampling method named *Preference Guided Reflective Sampling (PRS)*. *PRS* adopts a tree-based generation framework that learns to adapt and adjust its outputs by reflecting on its already generated data. It can incorporate a specific user preference to optimize responses that align with it. Adjusting preferences will generate tailored responses.
 
