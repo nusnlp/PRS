@@ -10,7 +10,7 @@ Code for our EMNLP2024 paper [Preference Guided Reflective Sampling for Aligning
   - [Requirements](#requirements)
 
 ## Background
-<img src="./figures/framework.png" height="200" alt="Description of Image">
+<img src="./figures/framework.png" height="150" alt="Description of Image">
 
 Iterative data generation and model re-training can effectively align large language models (LLMs) to human preferences. The process of data sampling is crucial, as it significantly influences the success of policy improvement.
 
@@ -35,7 +35,7 @@ Although random sampling is simple and effective, it has two main drawbacks:
 We propose a new sampling method named *Preference Guided Reflective Sampling (PRS)*. *PRS* adopts a tree-based generation framework that learns to adapt and adjust its outputs by reflecting on its already generated data. It can incorporate a specific user preference to optimize responses that align with it. Adjusting preferences will generate tailored responses.
 
 
-<img src="./figures/method.png" height="200" alt="Description of Image">
+<img src="./figures/method.png" height="300" alt="Description of Image">
 
 Specifically, for a given prompt \( x \) and user preference \( z \), PRS enables the model \( p \) to generate \( N \) responses. PRS employs a tree structure for sampling, which can have multiple layers, each with a corresponding width. For simplicity, PRS defaults to a two-layer structure, with each layer having a width of \( \frac{N}{2} \). Additionally, PRS uses a pre-trained reward model \( R(x, z, y) \) to score the generated responses.
 
@@ -48,13 +48,13 @@ Specifically, for a given prompt \( x \) and user preference \( z \), PRS enable
 
 
 ## Result: Best-of-N Sampling on AlpacaEval v2.0 and Arena-Hard v0.1
-<img src="./figures/result_BoN.png" height="200" alt="Description of Image">
+<img src="./figures/result_BoN.png" height="400" alt="Description of Image">
 
 We conducted best-of-N sampling experiments on AlpacaEval, where, for the same prompt, we used both random sampling and PRS to generate N responses, retaining the response with the highest reward score.
 
 We tested different language models for sampling: Mistral-7b-instruct-v0.2, Mistral-large-2407, Llama-3-8b-instruct, Llama-3.1-70b-instruct, Gemma-2-9b-it, and Qwen2-72b-instruct.
 
-As shown in Table 1, we first present the baseline results of different models on AlpacaEval v2.0 and Arena-Hard v0.1. We found that sampling multiple responses and selecting the best one significantly improves model performance. Furthermore, compared to random sampling, PRS consistently shows performance gains in both best-of-16 and best-of-32 settings. This experimental result demonstrates that **PRS outperforms random sampling in best-of-N sampling.**
+We first present the baseline results of different models on AlpacaEval v2.0 and Arena-Hard v0.1. We found that sampling multiple responses and selecting the best one significantly improves model performance. Furthermore, compared to random sampling, PRS consistently shows performance gains in both best-of-16 and best-of-32 settings. This experimental result demonstrates that **PRS outperforms random sampling in best-of-N sampling.**
 
 More results can be found in our paper.
 
