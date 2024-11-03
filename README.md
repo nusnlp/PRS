@@ -1,5 +1,5 @@
 ## PRS:
-Code for our EMNLP2024 paper [Preference Guided Reflective Sampling for Aligning Language Models](https://arxiv.org/abs/2408.12163). We provide the code for generating data with *PRS*, where the generated data can be used in iterative offline RL training for aligning a language model. For comparison, we also include the baseline sampling methods such as random sampling.
+Code for our EMNLP2024 paper [Preference-Guided Reflective Sampling for Aligning Language Models](https://arxiv.org/abs/2408.12163). We provide the code for generating data with *PRS*, where the generated data can be used in iterative offline RL training for aligning a language model. For comparison, we also include the baseline sampling methods such as random sampling.
 
 ## News:
 - Oct. 2024: *PRS* is accepted by EMNLP2024 as the main paper!
