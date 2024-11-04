@@ -35,3 +35,15 @@ python combine_for_tree_search.py path_to_initial_response path_to_refinement pa
 
 1. Install `vLLM`: We use vLLM to fasten model sampling, so you have to install vLLM from [here](https://docs.vllm.ai/en/latest/getting_started/installation.html).
 
+
+## Citation
+If you find our code is helpful to your work, please cite our paper:
+```
+@inproceedings{hai_prs_emnlp,
+      author = {Ye, Hai and Ng, Hwee You},
+      booktitle = {Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+      title = {Preference-Guided Reflective Sampling for Aligning Language Models},
+      url = {https://arxiv.org/pdf/2408.12163},
+      year = {2024}
+    }
+```

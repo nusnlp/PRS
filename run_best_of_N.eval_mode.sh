@@ -23,8 +23,8 @@ root_to_save=./${data_source}.prefer=${prefer_type}.${path_to_base_model}
 mkdir $root_to_save
 max_tokens=2048
 
-for mode in sample_N  sample_N_wo_prefer   tree_search tree_search_wo_feedback  ; do
-for n_sample in   32 128 ; do
+for mode in sample_N  sample_N_wo_prefer  tree_search tree_search_wo_feedback  ; do
+for n_sample in 128 ; do
 
     if [ $path_to_base_model == 'vicuna-13b-v1.5' ]; then
         base_model=./models/vicuna-13b-v1.5
@@ -58,8 +58,6 @@ for n_sample in   32 128 ; do
         prompt_template=./prompts/mistral-instruct.json
     fi
 
-
-
 if [ $mode == 'self_reflection' ]; then
     output=./$root_to_save/responses.mode=${mode}.prompt=v2.N=${n_sample}.jsonl
     CUDA_VISIBLE_DEVICES=$GPU python ./code/generate_self_reflection.py  --base_model $base_model --prompt_template $prompt_template --input $input --output $output --path_to_gen_self_feedback $path_to_gen_self_feedback --path_to_revise_w_feedback $path_to_revise_w_feedback --mode $mode --n_sample $n_sample --batch_size $batch_size --max_tokens $max_tokens
@@ -81,7 +79,6 @@ elif [ $mode == 'sample_N' ]; then
         path_user_preference=./user_preference_2.txt
     fi
     
-
     output=./$root_to_save/responses.mode=${mode}.N=${n_sample}.jsonl
     CUDA_VISIBLE_DEVICES=$GPU python ./code/generate_self_reflection.py  --base_model $base_model --prompt_template $prompt_template --input $input --output $output --path_to_gen_self_feedback $path_to_gen_self_feedback --path_to_revise_w_feedback $path_to_revise_w_feedback --mode $mode --n_sample $n_sample --path_user_preference $path_user_preference --batch_size $batch_size --max_tokens $max_tokens
 
@@ -130,7 +127,6 @@ elif [ $mode == 'tree_search' ]; then
 
     CUDA_VISIBLE_DEVICES=$GPU python ./code/generate_self_reflection.py  --base_model $base_model --prompt_template $prompt_template --input $input --output $output --path_to_gen_self_feedback $path_to_gen_self_feedback --path_to_revise_w_feedback $path_to_revise_w_feedback --mode 'tree_search' --n_sample $n_sample --path_user_preference $path_user_preference --batch_size $batch_size --max_tokens $max_tokens
 
-
     if [ $cal_reward == true ]; then
         input=./$root_to_save/responses.mode=${mode}.stage=self_reflection.N=${n_sample}.jsonl
         output=./$root_to_save/reward.responses.mode=${mode}.stage=self_reflection.N=${n_sample}.jsonl
@@ -153,7 +149,6 @@ elif [ $mode == 'tree_search_wo_feedback' ]; then
     output=./$root_to_save/responses.mode=${mode}.stage=random_sampling.N=${n_sample}.jsonl
     CUDA_VISIBLE_DEVICES=$GPU python ./code/generate_self_reflection.py  --base_model $base_model --prompt_template $prompt_template --input $input --output $output --path_to_gen_self_feedback $path_to_gen_self_feedback --path_to_revise_w_feedback $path_to_revise_w_feedback --mode 'sample_N' --n_sample $n_sample --path_user_preference $path_user_preference --batch_size $batch_size --max_tokens $max_tokens
 
-
     ## phase 2: obtain the best response from phase 1
     input=./$root_to_save/responses.mode=${mode}.stage=random_sampling.N=${n_sample}.jsonl
     output=./$root_to_save/reward.responses.mode=${mode}.stage=random_sampling.N=${n_sample}.jsonl
@@ -164,7 +159,6 @@ elif [ $mode == 'tree_search_wo_feedback' ]; then
     output=./$root_to_save/responses.mode=${mode}.stage=self_reflection.N=${n_sample}.jsonl
 
     CUDA_VISIBLE_DEVICES=$GPU python ./code/generate_self_reflection.py  --base_model $base_model --prompt_template $prompt_template --input $input --output $output --path_to_gen_self_feedback $path_to_gen_self_feedback --path_to_revise_w_feedback $path_to_revise_w_feedback --mode 'tree_search_wo_feedback' --n_sample $n_sample --path_user_preference $path_user_preference --batch_size $batch_size --max_tokens $max_tokens --path_to_revise_wo_feedback $path_to_revise_wo_feedback
-
 
     if [ $cal_reward == true ]; then
         input=./$root_to_save/responses.mode=${mode}.stage=self_reflection.N=${n_sample}.jsonl
